@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000"
     tools:context="com.example.syauqi.myapplication.HomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -9,6 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="Home"
+        android:textColor="#fff"
+        android:textSize="40dp"
         android:gravity="center"/>
 
 </LinearLayout>

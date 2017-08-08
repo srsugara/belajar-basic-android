@@ -7,9 +7,13 @@
 
 
     <Button
+        android:layout_marginTop="10dp"
+        android:background="@drawable/buttonselectorstyle"
         android:id="@+id/btnShow"
-        android:layout_width="match_parent"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="Show"/>
+        android:text="Show"
+        android:layout_gravity="center"
+        android:textColor="#fff"/>
 
 </LinearLayout>

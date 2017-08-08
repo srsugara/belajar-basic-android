@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ProductFragment extends Fragment {
+public class ProductFragment extends Fragment{
 //    List<ProductController> productControllerList = new ArrayList<ProductController>();
 //    ArrayAdapter<ProductController> productControllerArrayAdapter = null;
     private ListView listView;
@@ -40,7 +40,7 @@ public class ProductFragment extends Fragment {
             listProduct.add(data[i]);
         }
 
-        productAdapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,listProduct);
+        productAdapter = new ArrayAdapter<String>(getActivity(),R.layout.custom_text_listview,listProduct);
 
 
         listView=(ListView)rootview.findViewById(R.id.listProduct);

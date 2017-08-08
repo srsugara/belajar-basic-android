@@ -10,11 +10,12 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class WelcomeActivity extends FragmentActivity implements View.OnClickListener, FooterFragment.ReplaceFragment {
-    Button btn,btnHome,btnProduct;
+    Button btn,btnHome,btnProduct,btnWebview;
     HomeFragment home;
     ProductFragment product;
     HaloFragment halo;
     FooterFragment footer;
+    RefactoryFragment webview;
     TextView text;
 
     @Override
@@ -25,10 +26,12 @@ public class WelcomeActivity extends FragmentActivity implements View.OnClickLis
         //implementasi fragment
         btnHome=(Button) findViewById(R.id.btnHome);
         btnProduct=(Button) findViewById(R.id.btnProduct);
+        btnWebview=(Button) findViewById(R.id.btnRefactory);
         btn=(Button) findViewById(R.id.logout);
 
         btnHome.setOnClickListener(this);
         btnProduct.setOnClickListener(this);
+        btnWebview.setOnClickListener(this);
         btn.setOnClickListener(this);
 
         text=(TextView) findViewById(R.id.welcome);
@@ -70,12 +73,21 @@ public class WelcomeActivity extends FragmentActivity implements View.OnClickLis
         fTrans.commit();
     }
 
+    public void mRefactory() {
+        FragmentTransaction fTrans = getSupportFragmentManager().beginTransaction();
+        webview = new RefactoryFragment();
+        fTrans.replace(R.id.container,webview);
+        fTrans.commit();
+    }
+
     @Override
     public void onClick(View v) {
         if(v==btnHome){
             mHome();
         }else if(v==btnProduct) {
             mProduct();
+        }else if(v==btnWebview) {
+            mRefactory();
         }else if(v==btn) {
             logout();
         }
