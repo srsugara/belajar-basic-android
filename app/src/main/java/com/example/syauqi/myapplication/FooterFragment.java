@@ -50,11 +50,9 @@ public class FooterFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootview= inflater.inflate(R.layout.fragment_footer, container, false);
         btn=(Button) rootview.findViewById(R.id.btnShow);
-        Bundle bundle = this.getArguments();
-        if (bundle != null) {
-            String get = bundle.getString("username");
-            btn.setText(get);
-        }
+        String get = getArguments().getString("btnsay");
+        btn.setText(get);
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

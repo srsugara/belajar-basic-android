@@ -16,6 +16,7 @@ public class WelcomeActivity extends FragmentActivity implements View.OnClickLis
     HaloFragment halo;
     FooterFragment footer;
     TextView text;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,15 +38,16 @@ public class WelcomeActivity extends FragmentActivity implements View.OnClickLis
         FragmentTransaction fTrans = getSupportFragmentManager().beginTransaction();
         home = new HomeFragment();
         footer = new FooterFragment();
+
+        //passing value to fragment
+        Bundle bundle = new Bundle();
+        bundle.putString("btnsay", "Say Hy !");
+        footer.setArguments(bundle);
+
         fTrans.add(R.id.container,home);
         fTrans.add(R.id.footer,footer);
         fTrans.commit();
 
-
-        Bundle bundle = new Bundle();
-        footer=new FooterFragment();
-        bundle.putString("username", passedArg);
-        footer.setArguments(bundle);
 
     }
 

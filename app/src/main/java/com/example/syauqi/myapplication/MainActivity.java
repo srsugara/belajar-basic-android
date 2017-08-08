@@ -8,31 +8,47 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     EditText usr, pwd;
-    Button btn;
+    Button btnLogin,btnRegister;
+    Intent myintent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        usr=(EditText) findViewById(R.id.username);
-        pwd=(EditText) findViewById(R.id.password);
-        btn=(Button) findViewById(R.id.login);
-        btn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                if(usr.getText().toString().equals("syauqi") && pwd.getText().toString().equals("sugara")){
-                    Toast.makeText(getApplicationContext(),"Login Sukses", Toast.LENGTH_LONG);
-                    Intent myintent = new Intent(MainActivity.this,WelcomeActivity.class);
-                    myintent.putExtra("username", usr.getText().toString());
-                    startActivity(myintent);
-                }else{
-                    Toast.makeText(getApplicationContext(),"Username atau password invalid", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
+        btnLogin=(Button) findViewById(R.id.login);
+        btnRegister=(Button) findViewById(R.id.register);
+        btnLogin.setOnClickListener(this);
+        btnRegister.setOnClickListener(this);
     }
 
+    public void login(){
+        usr=(EditText) findViewById(R.id.username);
+        pwd=(EditText) findViewById(R.id.password);
+        if(usr.getText().toString().equals("syauqi") && pwd.getText().toString().equals("sugara")){
+            Toast.makeText(getApplicationContext(),"Login Sukses", Toast.LENGTH_LONG);
+            myintent = new Intent(MainActivity.this,WelcomeActivity.class);
+            myintent.putExtra("username", usr.getText().toString());
+            startActivity(myintent);
+        }else{
+            Toast.makeText(getApplicationContext(),"Username atau password invalid", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    public void register(){
+        Toast.makeText(getApplicationContext(),"Register", Toast.LENGTH_LONG);
+        myintent = new Intent(MainActivity.this,RegisterActivity.class);
+        startActivity(myintent);
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(v==btnLogin) {
+            login();
+        }else if(v==btnRegister) {
+            register();
+        }
+    }
 }

@@ -31,7 +31,7 @@ public class ProductFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootview= inflater.inflate(R.layout.fragment_product, container, false);
 
-        String[] data={"Serundeng","Rendang","Dendeng Batokok","Dodol Kentang","Blue Kerinci"};
+        String[] data={"Serundeng","Rendang","Dendeng Batokok","Dodol Kentang","Blue Kerinci","Gulai Ikan Semah","Teh Kayu Aro"};
 
         final List<String> listProduct=new ArrayList<String>();
 
