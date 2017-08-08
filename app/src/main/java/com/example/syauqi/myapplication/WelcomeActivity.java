@@ -9,10 +9,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class WelcomeActivity extends FragmentActivity implements View.OnClickListener {
+public class WelcomeActivity extends FragmentActivity implements View.OnClickListener, FooterFragment.ReplaceFragment {
     Button btn,btnHome,btnProduct;
     HomeFragment home;
     ProductFragment product;
+    HaloFragment halo;
+    FooterFragment footer;
     TextView text;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,19 @@ public class WelcomeActivity extends FragmentActivity implements View.OnClickLis
         text=(TextView) findViewById(R.id.welcome);
         String passedArg = getIntent().getExtras().getString("username");
         text.setText(passedArg);
+
+        FragmentTransaction fTrans = getSupportFragmentManager().beginTransaction();
+        home = new HomeFragment();
+        footer = new FooterFragment();
+        fTrans.add(R.id.container,home);
+        fTrans.add(R.id.footer,footer);
+        fTrans.commit();
+
+
+        Bundle bundle = new Bundle();
+        footer=new FooterFragment();
+        bundle.putString("username", passedArg);
+        footer.setArguments(bundle);
 
     }
 
@@ -62,5 +77,14 @@ public class WelcomeActivity extends FragmentActivity implements View.OnClickLis
         }else if(v==btn) {
             logout();
         }
+    }
+
+    @Override
+    public void replaceFragmentFromActivity() {
+        FragmentTransaction fTrans = getSupportFragmentManager().beginTransaction();
+
+        halo = new HaloFragment();
+        fTrans.replace(R.id.footer,halo);
+        fTrans.commit();
     }
 }
