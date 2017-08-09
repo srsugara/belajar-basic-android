@@ -7,16 +7,16 @@
     android:background="#000">
 
     <!-- TODO: Update blank fragment layout -->
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/loadProduct"
+            style="?android:attr/progressBarStyleHorizontal"/>
         <ListView
             android:id="@+id/listProduct"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:divider="#fff"
             android:dividerHeight="2px"/>
-    </ScrollView>
 
 </LinearLayout>

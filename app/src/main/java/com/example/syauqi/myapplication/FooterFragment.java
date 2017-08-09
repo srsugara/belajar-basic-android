@@ -1,6 +1,5 @@
 package com.example.syauqi.myapplication;
 
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,8 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 
 /**
@@ -56,10 +53,16 @@ public class FooterFragment extends Fragment {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                getActivity().startService(new Intent(getActivity(),ServiceMe.class));
                 mListener.replaceFragmentFromActivity();
             }
         });
         return rootview;
+    }
+
+    public void tryThread(View view){
+        long futureTime = System.currentTimeMillis() + 1000;
+
     }
 
     @Override

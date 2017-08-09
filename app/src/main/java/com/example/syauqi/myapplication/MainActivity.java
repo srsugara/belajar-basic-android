@@ -1,22 +1,35 @@
 package com.example.syauqi.myapplication;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.LightingColorFilter;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     EditText usr, pwd;
     Button btnLogin,btnRegister;
     Intent myintent;
+    Drawable iconUsername,iconPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        iconUsername = getResources().getDrawable( R.drawable.username );
+        iconPassword = getResources().getDrawable( R.drawable.password);
+        ColorFilter filter = new LightingColorFilter( Color.WHITE, Color.WHITE );
+        iconUsername.setColorFilter(filter);
+        iconPassword.setColorFilter(filter);
+        //((ImageView)findViewById(R.id.iconUsername)).setImageDrawable(myIcon);
 
         btnLogin=(Button) findViewById(R.id.login);
         btnRegister=(Button) findViewById(R.id.register);

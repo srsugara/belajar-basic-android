@@ -17,6 +17,8 @@
         </activity>
         <activity android:name=".WelcomeActivity" />
         <activity android:name=".RegisterActivity"></activity>
+        
+        <service android:name=".ServiceMe" />
     </application>
 
 </manifest>

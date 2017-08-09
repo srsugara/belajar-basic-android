@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class WelcomeActivity extends FragmentActivity implements View.OnClickListener, FooterFragment.ReplaceFragment {
+public class WelcomeActivity extends FragmentActivity implements View.OnClickListener, FooterFragment.ReplaceFragment, HaloFragment.ChangeFragment {
     Button btn,btnHome,btnProduct,btnWebview;
     HomeFragment home;
     ProductFragment product;
@@ -99,6 +99,17 @@ public class WelcomeActivity extends FragmentActivity implements View.OnClickLis
 
         halo = new HaloFragment();
         fTrans.replace(R.id.footer,halo);
+        fTrans.commit();
+    }
+
+    @Override
+    public void changeFragmentFromActivity() {
+        FragmentTransaction fTrans = getSupportFragmentManager().beginTransaction();
+        footer = new FooterFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("btnsay", "Say Hy !");
+        footer.setArguments(bundle);
+        fTrans.replace(R.id.footer,footer);
         fTrans.commit();
     }
 }

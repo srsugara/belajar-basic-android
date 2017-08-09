@@ -1,18 +1,18 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context="com.example.syauqi.myapplication.HaloFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
+    <Button
+        android:layout_marginTop="5dp"
+        android:background="@drawable/buttonselectorstyle"
+        android:id="@+id/btnStop"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="Halo Brader"
-        android:textColor="#f23557"
-        android:textSize="20dp"
-        android:gravity="center"
-        android:paddingTop="20dp"
-        android:paddingBottom="10dp"/>
+        android:text="Halo !"
+        android:layout_gravity="center"
+        android:textColor="#fff"/>
 
 </FrameLayout>
