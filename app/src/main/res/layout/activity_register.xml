@@ -13,6 +13,7 @@
     android:orientation="vertical">
 
     <TextView
+        android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/title"
@@ -21,33 +22,81 @@
         android:textSize="30dp"
         android:textColor="#fff"/>
     <RelativeLayout
-        android:layout_marginTop="20dp"
         android:id="@+id/form"
         android:layout_below="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center">
-        <EditText
-            android:layout_width="230dp"
-            android:layout_height="40dp"
-            android:id="@+id/username"
-            android:textColorHint="#fff"
-            android:textColor="#fff"
-            android:hint="Username"
-            android:layout_marginTop="60px"
-            android:background="@drawable/edittextstyle"/>
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/frame1"
+            android:layout_marginTop="30px">
 
-        <EditText
-            android:layout_width="230dp"
-            android:layout_height="40dp"
-            android:id="@+id/password"
-            android:layout_below="@+id/username"
-            android:hint="Password"
-            android:textColor="#fff"
-            android:textColorHint="#fff"
-            android:layout_marginTop="20px"
-            android:background="@drawable/edittextstyle"
-            android:inputType="textPassword"/>
+            <EditText
+                android:layout_width="230dp"
+                android:layout_height="40dp"
+                android:paddingLeft="40dp"
+                android:id="@+id/username"
+                android:textColorHint="#fff"
+                android:textColor="#fff"
+                android:hint="Username"
+                android:background="@drawable/edittextstyle"/>
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/iconUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/username"    />
+        </FrameLayout>
+        <FrameLayout
+            android:id="@+id/frame2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/frame1">
+            <EditText
+                android:layout_width="230dp"
+                android:layout_height="40dp"
+                android:paddingLeft="40dp"
+                android:id="@+id/password"
+                android:hint="Password"
+                android:textColor="#fff"
+                android:textColorHint="#fff"
+                android:layout_marginTop="20px"
+                android:background="@drawable/edittextstyle"
+                android:inputType="textPassword"/>
+            <ImageView
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/password"
+                />
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/frame2">
+            <EditText
+                android:layout_width="230dp"
+                android:layout_height="40dp"
+                android:paddingLeft="40dp"
+                android:id="@+id/phone"
+                android:hint="Phone"
+                android:textColor="#fff"
+                android:textColorHint="#fff"
+                android:layout_marginTop="20px"
+                android:background="@drawable/edittextstyle"
+                android:inputType="number"/>
+            <ImageView
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/username"
+                />
+        </FrameLayout>
     </RelativeLayout>
 
     <RelativeLayout
