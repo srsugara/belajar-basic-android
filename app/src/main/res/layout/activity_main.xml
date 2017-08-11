@@ -84,7 +84,7 @@
         <Button
             android:background="@drawable/buttonselectorstyle"
             android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:id="@+id/login"
             android:text="Login"
             android:textColor="#fff"
@@ -96,7 +96,7 @@
         <Button
             android:id="@+id/register"
             android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="50px"
             android:background="@drawable/buttonselectorstyle"

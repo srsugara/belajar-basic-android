@@ -81,7 +81,9 @@ public class ProductFragment extends Fragment{
 
         @Override
         protected void onPostExecute(String result) {
+
             load.setVisibility(View.GONE);
+            Toast.makeText(getActivity(),"Semua product berhasil ditampilkan", Toast.LENGTH_LONG).show();
         }
 
     }

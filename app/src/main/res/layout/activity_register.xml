@@ -94,7 +94,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/username"
+                android:src="@drawable/phone"
                 />
         </FrameLayout>
     </RelativeLayout>
@@ -108,8 +108,8 @@
         <Button
             android:background="@drawable/buttonselectorstyle"
             android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:id="@+id/login"
+            android:layout_height="40dp"
+            android:id="@+id/btnRegister"
             android:text="Create Account"
             android:textColor="#fff"
             android:textSize="15dp"
@@ -118,5 +118,18 @@
             android:textAlignment="gravity"/>
 
     </RelativeLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:id="@+id/btnPlay"
+        android:background="#212121"
+        android:text="Play"
+        android:textColor="#FF4081"
+        android:textStyle="bold"
+        android:layout_gravity="bottom|right"/>
+    </FrameLayout>
 
 </LinearLayout>
